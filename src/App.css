@@ -1,38 +1,55 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.parent {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
   }
+  
+.loading {
+    display: flex;
+    justify-content: center;
+    margin-top: 128px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.foundValue {
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  text-align: center;
+  color: #282626;
+  font-size: 16px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+  word-wrap: break-word;
 }
 
-.App-link {
-  color: #61dafb;
+.search-input {
+  width: 33%; 
+  height: 64px;
+  background-color:white;
+  color: #656EC2;
+  font-size: 20px;
+  font-family: 'Fira Sans', sans-serif;
+  font-weight: 700;
+  word-wrap: break-word;
+  margin-top: 128px;
+  border-radius: 0px;
+  box-shadow: 0px 7px 25px rgba(100, 100, 111, 0.20);
+  border: none;
+  outline: none;
+  text-indent: 36px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+
+
+::-webkit-input-placeholder { /* WebKit browsers */
+  color: #656EC2;
+}
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+  color: #656EC2;
+}
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+  color: #656EC2;
+}
+:-ms-input-placeholder { /* Internet Explorer 10+ */
+  color: #656EC2;
 }

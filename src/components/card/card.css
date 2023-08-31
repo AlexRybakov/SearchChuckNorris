@@ -1,0 +1,83 @@
+.ant-card {
+    display: flex;
+    flex-direction: column;
+    min-height: 150px;
+    background-color: white;
+    box-shadow: 0px 7px 25px rgba(100, 100, 111, 0.20);
+    color: #282626;
+    border-radius: 0;
+}
+
+.ant-row {
+    gap: 20px;
+}
+
+.ant-card:nth-child(1), .ant-card:nth-child(2) {
+    width: 100%;
+    flex-basis: 49%;
+    flex-grow: 1;
+    min-width: 0;
+    display: flex;
+    height: 262px;
+    word-wrap: break-word;
+}
+
+.ant-card:nth-child(n+3) {
+    width: 100%;
+    flex-shrink: 1;
+    flex-grow: 1;
+    flex-basis: 32%;
+    word-wrap: break-word;
+}
+
+.ant-card-meta-description {
+    -webkit-line-clamp: 2;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.ant-card .ant-card-actions {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    background: #ffffff;
+    border-top: 1px solid #f0f0f0;
+    display: flex;
+    border-radius: 0 0 8px 8px;
+    position: absolute;
+    bottom: 0px;
+    width: -webkit-fill-available;
+}
+
+.jokesId {
+    color: #767676;
+    font-size: 14px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    word-wrap: break-word;
+}
+
+.jokesDate {
+    color: #767676;
+    font-size: 14px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    word-wrap: break-word;
+}
+
+.ant-typography {
+    color: #282626;
+    font-size: 20px;
+    font-family: 'Fira Sans', sans-serif;
+    font-weight: 400;
+    line-height: 30px;
+    word-wrap: break-word;
+}
+
+.cardFooter {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    word-wrap: break-word;
+}

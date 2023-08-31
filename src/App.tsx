@@ -1,24 +1,36 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { useState } from 'react';
+import { useGetSearchQuery } from './redux';
+import { Layout } from './components/layout/layout';
+import './App.css'
 
 function App() {
+
+const [searchQuery, setSearchQuery] = useState(''); 
+const {data, isLoading}  = useGetSearchQuery(searchQuery);
+const found = data !== undefined;
+
+const handleKeyDown = (event) => {
+  if (event.key === 'Enter') {
+    setSearchQuery(event.target.value);
+  }
+};
+
+if (isLoading) return <h1 className='loading'>Loading...</h1>
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <div className='parent'>
+        <input
+          type='search'
+          className='search-input'
+          placeholder='Search jokes...'
+          minLength={3}
+          onKeyDown={handleKeyDown}
+          autoFocus={true}
+          />
+          {found && <p className='foundValue'>Found jokes: {data.total}</p>}
+      </div>
+      <Layout {...data}/>
     </div>
   );
 }
